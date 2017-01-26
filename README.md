@@ -26,5 +26,7 @@ Clone the `Petitii_IGPR_Web` repository using git:
 
     npm start
 
+After this you should be able to access the application from `127.0.0.1:4200`
+
 [git]: https://git-scm.com/
 [npm]: https://www.npmjs.org/
