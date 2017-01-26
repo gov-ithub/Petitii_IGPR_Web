@@ -1,0 +1,338 @@
+<div class="wrapper">
+
+	<header class="main-header">
+		<!-- Logo -->
+		<a [routerLink]="['']" class="logo">
+			<!-- logo for regular state and mobile devices -->
+			<span class="logo-lg"><img src="http://www.romanisme.ro/igpr/logo_print.png" style="width: 200px; padding-bottom: 3px;" /></span>
+		</a>
+
+		<!-- banda albastra de sus -->
+		<nav class="navbar navbar-static-top">
+
+			<!-- Navbar Right Menu -->
+			<div style="text-align: center; font-size: 17px; font-weight: bold; color: white; line-height: 22px; padding: 10px;">
+				Propunere interfata politie
+			</div>
+
+		</nav>
+	</header>
+
+	<app-sidebar></app-sidebar>
+
+
+	<!-- Content Wrapper. Contains page content -->
+	<div class="content-wrapper">
+		<!-- Content Header (Page header) -->
+		<section class="content-header">
+			<h1>
+				Situatie petitii - 2017
+			</h1>
+
+		</section>
+
+		<!-- Main content -->
+		<section class="content">
+			<!-- Info boxes -->
+			<div class="row">
+				<div class="col-md-3 col-sm-6 col-xs-12">
+					<div class="info-box">
+						<span class="info-box-icon bg-aqua"><i class="fa fa-file"></i></span>
+						<div class="info-box-content">
+							<span class="info-box-text" style="text-align: center; font-size: 18px;">Total<br /> <strong>petitii</strong></span>
+							<span class="info-box-number" style="text-align: center; font-weight: bold;">900</span>
+						</div>
+						<!-- /.info-box-content -->
+					</div>
+					<!-- /.info-box -->
+				</div>
+				<!-- /.col -->
+				<div class="col-md-3 col-sm-6 col-xs-12">
+					<div class="info-box">
+						<span class="info-box-icon bg-red"><i class="fa fa-exclamation-circle"></i></span>
+						<div class="info-box-content">
+							<span class="info-box-text" style="text-align: center; font-size: 18px;">Petitii <br /> <strong>neprocesate</strong></span>
+							<span class="info-box-number" style="text-align: center; font-weight: bold;">410</span>
+						</div>
+						<!-- /.info-box-content -->
+					</div>
+					<!-- /.info-box -->
+				</div>
+				<!-- /.col -->
+
+				<!-- fix for small devices only -->
+				<div class="clearfix visible-sm-block"></div>
+
+				<div class="col-md-3 col-sm-6 col-xs-12">
+					<div class="info-box">
+						<span class="info-box-icon bg-yellow"><i class="fa fa-hourglass-1"></i></span>
+						<div class="info-box-content">
+							<span class="info-box-text" style="text-align: center; font-size: 18px;">Petitii<br /> <strong>in procesare</strong></span>
+							<span class="info-box-number" style="text-align: center; font-weight: bold;">290</span>
+						</div>
+						<!-- /.info-box-content -->
+					</div>
+					<!-- /.info-box -->
+				</div>
+				<!-- /.col -->
+				<div class="col-md-3 col-sm-6 col-xs-12">
+					<div class="info-box">
+						<span class="info-box-icon bg-green"><i class="fa fa-archive"></i></span>
+						<div class="info-box-content">
+							<span class="info-box-text" style="text-align: center; font-size: 18px;">Petitii<br /> <strong>solutionate</strong></span>
+							<span class="info-box-number" style="text-align: center; font-weight: bold;">200</span>
+						</div>
+						<!-- /.info-box-content -->
+					</div>
+					<!-- /.info-box -->
+				</div>
+				<!-- /.col -->
+			</div>
+			<!-- /.row -->
+
+			<!-- filtrare petitii -->
+			<div class="box" style="width: 100%;">
+
+				<!-- /.box-header -->
+				<div class="row">
+					<div class="col-md-6">
+						<div class="box-header">
+							<h3 class="box-title" style="padding-bottom: 12px;"><strong>Filtrare petitii</strong></h3>
+						</div>
+						<div class="box-body">
+							<!-- Date -->
+							<div class="form-group">
+								<label>ID petitie:</label>
+								<div class="input-group date">
+									<div class="input-group-addon">
+										<i class="fa fa-calendar"></i>
+									</div>
+									<input type="text" class="form-control pull-right" id="datepicker">
+								</div>
+								<!-- /.input group -->
+							</div>
+							<!-- /.form group -->
+
+							<!-- Date range -->
+							<div class="form-group">
+								<label>Data (o singura zi):</label>
+								<div class="input-group">
+									<div class="input-group-addon">
+										<i class="fa fa-calendar"></i>
+									</div>
+									<input type="text" class="form-control pull-right" id="reservation">
+								</div>
+								<!-- /.input group -->
+							</div>
+							<div class="form-group">
+								<label>Interval de timp - de la / pana la:</label>
+								<div class="input-group">
+									<div class="input-group-addon">
+										<i class="fa fa-calendar"></i>
+									</div>
+									<input type="text" class="form-control pull-right" id="reservation">
+								</div>
+							</div>
+						</div>
+						<!-- /.box-body -->
+
+					<!-- /.box -->
+					<!-- /.box -->
+				</div>
+				<!-- /.col -->
+
+				<!-- /.col -->
+				<div class="col-md-6">
+
+						<div class="box-header">
+						<div style="float: left; width: auto; padding-left: 100px;">
+							<button type="button" class="btn btn-block btn-primary btn-sm" style="font-weight: bold; font-size: 14px;">
+							Salveaza cautarea</button>
+							</div>
+							<div style="float: right; width: auto; padding-right: 100px;">
+							<button type="button" class="btn btn-block btn-primary btn-sm" style="font-weight: bold; font-size: 14px;">
+							Exporta statistica</button>
+						</div>
+						</div>
+						<div class="box-body">
+							<!-- Date -->
+							<div class="form-group">
+								<label>Petent</label>
+								<div class="input-group">
+									<div class="input-group-addon">
+										<i class="fa fa-calendar"></i>
+									</div>
+									<input type="text" class="form-control pull-right" id="reservation">
+								</div>
+							</div>
+							<div class="form-group">
+								<label>Judet</label>
+								<select class="form-control select2"  data-placeholder="Select a State" style="width: 100%;">
+									<option>Arad</option>
+									<option>Arges</option>
+								</select>
+							</div>
+							<!-- /.form group -->
+
+							<!-- Date range -->
+							<div class="form-group">
+								<label>Categorii petitii</label>
+								<select class="form-control select2"  data-placeholder="Select a State" style="width: 100%;">
+									<option>Parcare ilegala</option>
+									<option>Furt din locuinta</option>
+								</select>
+							</div>
+						</div>
+						<!-- /.box-body -->
+
+					<!-- /.box -->
+					<!-- /.box -->
+				</div>
+				<!-- /.col -->
+			</div>
+						<!-- /.box-body -->
+					</div>
+			<!-- end filtrare -->
+
+				<!-- tabel sesizari -->
+					<div class="box box-info" style="width: 100%;">
+						<div class="box-header with-border">
+							<h3 class="box-title"><strong>Petitii</strong></h3>
+						</div>
+
+						<!-- /.box-header -->
+						<div class="box-body">
+							<div class="table-responsive">
+								<table class="table no-margin">
+									<thead>
+									<tr>
+										<th style="text-align: center;">ID petitie</th>
+										<th style="text-align: center;">Data petitie</th>
+										<th style="text-align: center;">Categorie</th>
+										<th style="text-align: center;">Zile ramase</th>
+										<th style="text-align: center;">Detalii petitie </th>
+										<th style="text-align: center;">Localitate </th>
+										<th style="text-align: center;">Judet </th>
+										<th style="text-align: center;">Data solutionare</th>
+										<th style="text-align: center;">Status</th>
+										<th style="text-align: center;">Solutie </th>
+									</tr>
+									</thead>
+									<tbody>
+									<tr>
+										<td style="text-align: center;">OR9842</td>
+										<td style="text-align: center;">09/12/2016 08:13</td>
+										<td style="text-align: center;">Furt din locuinta</td>
+										<td style="text-align: center;">0 zile  </td>
+										<td style="text-align: center;"><a href="http://romanisme.ro/igpr/detalii_petitie.php"><strong>Vizualizare</strong></a></td>
+										<td style="text-align: center;">Braila</td>
+										<td style="text-align: center;">Braila</td>
+										<td style="text-align: center;">10/12/2016 12:33</td>
+										<td style="text-align: center;"> <span class="label" style="background-color: #00a65a;">SOLUTIONAT</span></td>
+										<td style="text-align: center;"><a href="http://romanisme.ro/igpr/radu.jpg" target="_blank"><strong>Vizualizare</strong></a></td>
+									</tr>
+									<tr>
+										<td style="text-align: center;">OR9842</td>
+										<td style="text-align: center;">09/12/2016 08:13</td>
+										<td style="text-align: center;">Tentativa de omor</td>
+										<td style="text-align: center;">15 zile  </td>
+										<td style="text-align: center;">Vizualizare</td>
+										<td style="text-align: center;">Sector 3</td>
+										<td style="text-align: center;">Bucuresti</td>
+										<td style="text-align: center;">in curs</td>
+										<td style="text-align: center;"> <span class="label" style="background-color: #f2ac1d;">IN PROCESARE</span></td>
+										<td style="text-align: center;">Vizualizare</td>
+									</tr>
+									<tr>
+										<td style="text-align: center;">OR9842</td>
+										<td style="text-align: center;">09/12/2016 08:13</td>
+										<td style="text-align: center;">Furt auto</td>
+										<td style="text-align: center;">30 zile  </td>
+										<td style="text-align: center;">Vizualizare</td>
+										<td style="text-align: center;">Caransebes </td>
+										<td style="text-align: center;">Caras-Severin</td>
+										<td style="text-align: center;">in curs</td>
+										<td style="text-align: center;"> <span class="label" style="background-color: #dd4b39;">NEPROCESAT</span></td>
+										<td style="text-align: center;">Vizualizare</td>
+									</tr>
+									<tr>
+										<td style="text-align: center;">OR9842</td>
+										<td style="text-align: center;">15/12/2016 08:13</td>
+										<td style="text-align: center;">Probleme rutiere</td>
+										<td style="text-align: center;">10 zile  </td>
+										<td style="text-align: center;">Vizualizare</td>
+										<td style="text-align: center;">Bucuresti </td>
+										<td style="text-align: center;">Sector 1</td>
+										<td style="text-align: center;">in curs</td>
+										<td style="text-align: center;"> <span class="label" style="background-color: #f2ac1d;">IN PROCESARE </span></td>
+										<td style="text-align: center;">Vizualizare</td>
+									</tr>
+									<tr>
+										<td style="text-align: center;">OR9842</td>
+										<td style="text-align: center;">15/12/2016 08:13</td>
+										<td style="text-align: center;">Probleme rutiere</td>
+										<td style="text-align: center;">10 zile  </td>
+										<td style="text-align: center;">Vizualizare</td>
+										<td style="text-align: center;">Bucuresti </td>
+										<td style="text-align: center;">Sector 1</td>
+										<td style="text-align: center;">in curs</td>
+										<td style="text-align: center;"> <span class="label" style="background-color: #f2ac1d;">IN PROCESARE </span></td>
+										<td style="text-align: center;">Vizualizare</td>
+									</tr>
+									<tr>
+										<td style="text-align: center;">OR9842</td>
+										<td style="text-align: center;">15/12/2016 08:13</td>
+										<td style="text-align: center;">Probleme rutiere</td>
+										<td style="text-align: center;">10 zile  </td>
+										<td style="text-align: center;">Vizualizare</td>
+										<td style="text-align: center;">Bucuresti </td>
+										<td style="text-align: center;">Sector 1</td>
+										<td style="text-align: center;">in curs</td>
+										<td style="text-align: center;"> <span class="label" style="background-color: #f2ac1d;">IN PROCESARE </span></td>
+										<td style="text-align: center;">Vizualizare</td>
+									</tr>
+									<tr>
+										<td style="text-align: center;">OR9842</td>
+										<td style="text-align: center;">09/12/2016 08:13</td>
+										<td style="text-align: center;">Furt auto</td>
+										<td style="text-align: center;">30 zile  </td>
+										<td style="text-align: center;">Vizualizare</td>
+										<td style="text-align: center;">Caransebes </td>
+										<td style="text-align: center;">Caras-Severin</td>
+										<td style="text-align: center;">in curs</td>
+										<td style="text-align: center;"> <span class="label" style="background-color: #dd4b39;">NEPROCESAT</span></td>
+										<td style="text-align: center;">Vizualizare</td>
+									</tr>
+									<tr>
+										<td style="text-align: center;">OR9842</td>
+										<td style="text-align: center;">09/12/2016 08:13</td>
+										<td style="text-align: center;">Furt auto</td>
+										<td style="text-align: center;">30 zile  </td>
+										<td style="text-align: center;">Vizualizare</td>
+										<td style="text-align: center;">Caransebes </td>
+										<td style="text-align: center;">Caras-Severin</td>
+										<td style="text-align: center;">in curs</td>
+										<td style="text-align: center;"> <span class="label" style="background-color: #dd4b39;">NEPROCESAT</span></td>
+										<td style="text-align: center;">Vizualizare</td>
+									</tr>
+										</tbody>
+								</table>
+							</div>
+							<!-- /.table-responsive -->
+						</div>
+						<!-- /.box-body -->
+
+						<!-- /.box-footer -->
+					</div>
+					<!-- end tabel sesizari -->
+
+		</section>
+
+		<!-- /.content -->
+	</div>
+	<!-- /.content-wrapper -->
+
+	<app-footer></app-footer>
+
+
+</div>
