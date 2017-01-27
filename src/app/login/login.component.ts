@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewInit, OnDestroy, ElementRef, Inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../services/auth.service';
 import { FormBuilder, Validators } from '@angular/forms';
 
 declare var $:any;
@@ -10,7 +10,7 @@ declare var $:any;
 	templateUrl: 'login.component.html',
 	styleUrls: ['login.component.css']
 })
-export class LoginComponent implements OnInit, AfterViewInit, OnDestroy {
+export class LoginComponent implements AfterViewInit, OnDestroy {
 	public loginForm = this.fb.group({
 		email: ["", Validators.required],
 		password: ["", Validators.required],
@@ -35,9 +35,6 @@ export class LoginComponent implements OnInit, AfterViewInit, OnDestroy {
 
 	ngOnDestroy(){
 		$(this.elementRef.nativeElement).find('input').iCheck('destroy');
-	}
-
-	ngOnInit() {
 	}
 
 	login(event: Event) {

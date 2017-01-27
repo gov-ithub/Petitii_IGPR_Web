@@ -8,8 +8,11 @@ import 'rxjs/add/operator/map'
 @Injectable()
 export class AuthService {
 	private baseUrl: string = 'https://tickets.kyospirit.ro:443/auth/';
+
 	isAuthenticated: boolean = false;
 	userData: {};
+	userToken: string;
+
 	constructor( private http: Http ) {}
 
 	/**
@@ -31,19 +34,26 @@ export class AuthService {
 			let user = response.json();
 			console.log( 'user', user );
 			if (user && user.type == 'bearer') {
-				console.log( 'MERGE' );
+
+				let userToken = user.value;
 
 				this.userData = user;
 				this.isAuthenticated = true;
 
 				// store user details
 				localStorage.setItem('currentUser', JSON.stringify(user));
+				localStorage.setItem('userToken', userToken);
 				console.log( 'auth extract data', this );
 			}
 
 			return user;
 
 		})
+	}
+
+	getUserToken(){
+		console.log( 'userToken', localStorage.getItem('userToken') );
+		return localStorage.getItem('userToken');
 	}
 
 	/**
