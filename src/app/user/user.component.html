@@ -3,13 +3,12 @@
 	<app-header></app-header>
 	<app-sidebar></app-sidebar>
 
-
 	<!-- Content Wrapper. Contains page content -->
 	<div *ngIf="userDetails" class="content-wrapper">
 		<!-- Content Header (Page header) -->
 		<section class="content-header">
 			<h1>
-				Detalii pentru utilizatorul {{ userDetails.name }}
+				Detalii pentru utilizatorul <strong>{{ userDetails.name }}</strong>
 			</h1>
 
 		</section>
@@ -31,12 +30,12 @@
 									<b>Adresa</b> <a class="pull-right">{{ userDetails.address }}</a>
 								</li>
 								<li class="list-group-item">
-									<b>Judet</b> <a class="pull-right">{{ userDetails.countyId }}</a>
+									<b>Judet</b> <a class="pull-right">{{ this.getCountyById( userDetails.countyId ) }}</a>
 								</li>
 
 							</ul>
 
-							<a href="#" class="btn btn-primary btn-block"><b>Editeaza utilizatorul</b></a>
+							<a [routerLink]="['/user', userDetails.id, 'edit']" href="#" class="btn btn-primary btn-block"><b>Editeaza utilizatorul</b></a>
 						</div>
 						<!-- /.box-body -->
 					</div>
@@ -44,13 +43,26 @@
 				</div>
 
 				<div class="col-md-9">
-					<div class="box box-primary">
+
+					<!-- Show if the user doesn't have any tickets opened' -->
+					<div class="box box-primary" *ngIf="userDetails.tickets.length == 0">
+						<div class="box-header with-border">
+							<h3 class="box-title">Petitiile utilizatorului</h3>
+							<!-- /.box-tools -->
+						</div>
+						<div class="box-body text-center">
+							Utilizatorul nu are nicio petitie deschisa
+						</div>
+					</div>
+
+					<!-- Show if the user has tickets opened' -->
+					<div class="box box-primary" *ngIf="userDetails.tickets.length > 0">
 						<div class="box-header with-border">
 							<h3 class="box-title">Petitiile utilizatorului</h3>
 
-							<div class="box-tools pull-right">
+							<div  class="box-tools pull-right">
 								<div class="has-feedback">
-									<input type="text" class="form-control input-sm" placeholder="Cauta utilizator">
+									<input type="text" class="form-control input-sm" placeholder="Cauta petitie">
 									<span class="glyphicon glyphicon-search form-control-feedback"></span>
 								</div>
 							</div>

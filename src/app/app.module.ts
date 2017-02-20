@@ -20,6 +20,7 @@ import { AppRouterProvider } from './routes';
 import { AuthService } from './services/auth.service';
 import { HttpService } from './services/http.service';
 import { UsersService } from './services/users.service';
+import { CountiesService } from './services/counties.service';
 
 // Guards
 import { AuthGuard } from './guards/auth.guard';
@@ -51,7 +52,8 @@ import { UsereditComponent } from './useredit/useredit.component';
 		AuthService,
 		AuthGuard,
 		HttpService,
-		UsersService
+		UsersService,
+		CountiesService
 	],
 	bootstrap: [AppComponent]
 })

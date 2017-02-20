@@ -3,6 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import { Injectable } from '@angular/core';
 import { Http, RequestOptionsArgs, Response, Headers } from '@angular/http';
 
+import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/map'
 import 'rxjs/add/operator/catch'
 
@@ -26,6 +27,7 @@ export class HttpService {
 		options.headers.set('Authorization', `Bearer ${token}`);
 		console.log( 'performing request', this.apiUrl + url );
 		return this.http.get( this.apiUrl + url, options ).map((response) => {
+			console.log( 'response for last request request', response.json() );
 			return response.json();
 		}).catch(this.handleError( this ));
 	}

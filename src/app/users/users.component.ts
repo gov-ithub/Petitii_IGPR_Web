@@ -1,3 +1,5 @@
+import { Observable } from 'rxjs/Rx';
+import { CountiesService } from './../services/counties.service';
 import { UsersService } from './../services/users.service';
 import { Component, AfterViewInit, OnDestroy, ElementRef, Inject, OnInit } from '@angular/core';
 
@@ -10,24 +12,28 @@ declare var $:any;
 })
 export class UsersComponent implements OnInit, AfterViewInit, OnDestroy {
 
-	users = []
+	users = [];
+	counties = [];
 	elementRef: ElementRef;
 
-	constructor( @Inject(ElementRef) elementRef: ElementRef, private userService: UsersService ) {
+	constructor( @Inject(ElementRef) elementRef: ElementRef, private userService: UsersService, private countyService: CountiesService ) {
 		this.elementRef = elementRef;
 	}
 
 	ngOnInit(){
-		new Promise((resolve, reject) => {
-			this.userService.getUsers().subscribe(
-				(response) => {
-					console.log( response );
-					this.users = response
-				},
-				(error) => {},
-				() => {}
-			);
+
+		Observable.forkJoin([
+			this.userService.getUsers(),
+			this.countyService.getCounties()
+		]).subscribe(data => {
+			this.users = data[0];
+			this.counties = data[1];
 		});
+
+	}
+
+	getCountyById( countyId ){
+		return this.counties[countyId].name;
 	}
 
 	ngAfterViewInit() {

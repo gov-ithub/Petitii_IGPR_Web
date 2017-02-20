@@ -1,3 +1,70 @@
-<p>
-  useredit works!
-</p>
+<div class="wrapper">
+
+	<app-header></app-header>
+	<app-sidebar></app-sidebar>
+
+	<!-- Content Wrapper. Contains page content -->
+	<div *ngIf="userDetails" class="content-wrapper">
+		<!-- Content Header (Page header) -->
+		<section class="content-header">
+			<h1>
+				Editeaza utilizatorul <strong>{{ userDetails.name }}</strong>
+			</h1>
+
+		</section>
+
+		<!-- Main content -->
+		<section class="content">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="box box-primary">
+						<form>
+							<div class="box-body">
+								<div class="form-group">
+									<label for="igpr-user-name">Nume</label>
+									<input type="text" class="form-control" id="igpr-user-name" [(ngModel)]="userDetails.name" name="name" placeholder="Enter email">
+								</div>
+
+								<div class="form-group">
+									<label for="igpr-user-email">Adresa de email</label>
+									<input type="email" class="form-control" id="igpr-user-email" [(ngModel)]="userDetails.email" name="email" placeholder="Enter email">
+								</div>
+
+								<div class="form-group">
+									<label for="igpr-user-cnp">CNP</label>
+									<input type="text" class="form-control" id="igpr-user-cnp" [(ngModel)]="userDetails.cnp" name="cnp" placeholder="Enter email">
+								</div>
+
+								<div class="form-group">
+									<label for="igpr-user-phone">Telefon</label>
+									<input type="text" class="form-control" id="igpr-user-phone" [(ngModel)]="userDetails.phone" name="phone" placeholder="Enter email">
+								</div>
+
+								<div class="form-group">
+									<label for="igpr-user-countyId">Judet</label>
+									<input type="text" class="form-control" id="igpr-user-countyId" [(ngModel)]="userDetails.countyId" name="countyId" placeholder="Enter email">
+								</div>
+
+								<div class="form-group">
+									<label for="igpr-user-address">Adresa</label>
+									<input type="text" class="form-control" id="igpr-user-address" [(ngModel)]="userDetails.address" name="address" placeholder="Enter email">
+								</div>
+
+								<div class="box-footer">
+									<button type="submit" class="btn btn-primary">Submit</button>
+								</div>
+							</div>
+						</form>
+						<!-- /.box-body -->
+					</div>
+
+				</div>
+			</div>
+		</section>
+
+		<!-- /.content -->
+	</div>
+	<!-- /.content-wrapper -->
+
+	<app-footer></app-footer>
+</div>

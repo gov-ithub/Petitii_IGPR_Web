@@ -12,12 +12,9 @@ export const appRoutes: Routes = [
 	{path: 'login', component:LoginComponent},
 	{path: 'dashboard', component:DashboardComponent, canActivate: [AuthGuard]},
 	{path: 'users', component:UsersComponent, canActivate: [AuthGuard]},
-	{ path: 'user/:id', component: UserComponent, canActivate: [AuthGuard]
-		// children: [
-		// 	{ path: '', component: UserComponent, canActivate: [AuthGuard] },
-		// 	{ path: 'edit', component: UsereditComponent }
-		// ]
-	},
+	{ path: 'user/:id', component: UserComponent, canActivate: [AuthGuard] },
+	{ path: 'user/:id/edit', component: UsereditComponent, canActivate: [AuthGuard] },
+
 	// otherwise redirect to home
 	{ path: '**', redirectTo: '' }
 

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core'
-import { Http, Response, URLSearchParams, RequestOptions } from '@angular/http'
+import { Http, Response, URLSearchParams, RequestOptions, Headers } from '@angular/http'
 
 
 import { Observable } from 'rxjs/Observable'
@@ -20,15 +20,9 @@ export class AuthService {
 	 */
 	login(usercreds){
 
-		let params = new URLSearchParams();
-		params.set('email', usercreds.email);
-		params.set('password', usercreds.password);
-
-		let options = new RequestOptions({
-			search: params
-		});
-
-		return this.http.get( this.baseUrl + 'users', options).map(( response: Response ) => {
+		let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
+		let options = new RequestOptions({ headers: headers });
+		return this.http.post( this.baseUrl + 'users', usercreds, options ).map(( response: Response ) => {
 
 			// login successful if there's a jwt token in the response
 			let user = response.json();
@@ -43,7 +37,6 @@ export class AuthService {
 				// store user details
 				localStorage.setItem('currentUser', JSON.stringify(user));
 				localStorage.setItem('userToken', userToken);
-				console.log( 'auth extract data', this );
 			}
 
 			return user;
@@ -52,7 +45,6 @@ export class AuthService {
 	}
 
 	getUserToken(){
-		console.log( 'userToken', localStorage.getItem('userToken') );
 		return localStorage.getItem('userToken');
 	}
 
